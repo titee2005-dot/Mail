@@ -12,7 +12,7 @@ const GALLERY_TABS = [
 ];
 
 const GALLERY_ITEMS = [
-  {
+/*  {
     id: 1,
     src: "/rose-about.jpg",
     label: "Debut Stage",
@@ -140,8 +140,8 @@ const GALLERY_ITEMS = [
     credit: "RollzyBunny",
     link: "https://ลิงก์เพจเจ้าของภาพ-2"
   },
-  
-];
+  */
+]; 
 
 function AllGalleryPage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -186,7 +186,7 @@ function AllGalleryPage() {
         <div className="page-section-inner section-reveal">
           <header className="gallery-page-header">
             <h2>Gallery</h2>
-            <p>รวมภาพของโรสทั้งบน Stage, Event, Meme, Fanart และอื่นๆ</p>
+            <p>รวมภาพของทั้งบน Stage, Event, Meme, Fanart และอื่นๆ</p>
           </header>
 
           {/* Tabs */}

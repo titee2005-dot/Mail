@@ -25,7 +25,7 @@ function Hero() {
       {/* รูปพื้นหลังเต็มจอ */}
       <div
         className="hero-image-bg"
-        style={{ backgroundImage: "url('/Mail-cover4.JPG')" }}
+        style={{ backgroundImage: "url('/Mail-cover5.JPG')" }}
       />
 
       {/* ชั้นทับมืดบาง ๆ */}
@@ -345,7 +345,7 @@ function SocialSection() {
             <blockquote
               className="tiktok-embed"
               cite="https://www.tiktok.com/@mail.bnk48official"
-              data-unique-id="rose.bnk48official"
+              data-unique-id="mail.bnk48official"
               data-embed-type="creator"
               style={{ maxWidth: "780px", minWidth: "288px" }}
             >
