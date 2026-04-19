@@ -65,20 +65,20 @@ function AboutSection() {
           
           <div className="pink-grid">
             <div className="pink-item">
-              <span className="pink-label">Born:</span>
-              <span className="pink-value">july 17, 2010</span>
+              <span className="pink-label">Born</span>
+              <span className="pink-value">July 17, 2010</span>
             </div>
             <div className="pink-item">
-              <span className="pink-label">Debut:</span>
+              <span className="pink-label">Debut</span>
               <span className="pink-value">October 2025</span>
             </div>
             <div className="pink-item">
-              <span className="pink-label">Label:</span>
-              <span className="pink-value">BNK48 - iAM (Independent Artist Management)</span>
+              <span className="pink-label">Gen</span>
+              <span className="pink-value">BNK48 6th Generation</span>
             </div>
             <div className="pink-item">
-              <span className="pink-label">Fandom:</span>
-              <span className="pink-value">Rose's Garden</span>
+              <span className="pink-label">Team</span>
+              <span className="pink-value">BNK48 Team Trainee</span>
             </div>
           </div>
 
@@ -98,10 +98,10 @@ function AboutSection() {
           {showMore && (
             <div className="pink-more-info">
               <ul className="pink-list">
-                <li><strong>Height:</strong> 167 cm</li>
-                <li><strong>Province:</strong> Nakhon Pathom</li>
-                <li><strong>Hobby:</strong> Series, Games, Writing</li>
-                <li><strong>Blood Group:</strong> B</li>
+                <li><strong>Height :</strong> 158 cm</li>
+                <li><strong>Province :</strong> Bangkok</li>
+                <li><strong>Hobby :</strong> ดูซีรีส์, ดูการ์ตูน, ไปเที่ยว, เล่นเกม </li>
+                <li><strong>Blood Group :</strong> O</li>
               </ul>
             </div>
           )}
@@ -482,16 +482,16 @@ function RollzyBunnySection() {
         <div className="rollzy-left">
           <img src="rollzy-title.png" alt="Rollzy Bunny" className="title-image" />
           <p className="rollzy-lead">
-            Rose BNK48 Supporters 𐔌՞. .՞𐦯
+            Mail BNK48 Supporters 𐔌՞. .՞𐦯
           </p>
           <p className="rollzy-subtitle">
-            มาร่วมเป็นชาว Rose's Garden ไปด้วยกัน～
+            มาร่วม Support เมลไปด้วยกัน～
           </p>
 
         <div className="rollzy-actions-row">
             <div className="rollzy-actions">
               <a
-                href="https://line.me/ti/g2/Unlc6VfjqNXos90q-mWUW80tatHddPT-11-3Gg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                href="https://line.me/ti/g2/9XmcfZzUkbUwRZYcnDu-QWpmB4oO1gveVPVj1g?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rollzy-btn rollzy-btn--primary"
@@ -559,7 +559,7 @@ function RollzyBunnySection() {
                     alt="Facebook"
                     className="rollzy-channel-logo-fb"
                   />
-                  <span className="rollzy-channel-name">Rollzy Bunny - Rose BNK48 Supporters </span>
+                  <span className="rollzy-channel-name">IceCream for Mail's - Mail BNK48 Thailand Fanclub </span>
                 </span>
                 <span className="rollzy-channel-arrow">↗</span>
               </a>
@@ -577,7 +577,7 @@ function RollzyBunnySection() {
                     alt="Instagram"
                     className="rollzy-channel-logo-ig"
                   />
-                  <span className="rollzy-channel-name">rollzybunny</span>
+                  <span className="rollzy-channel-name">icecreamformail.thfc</span>
                 </span>
                 <span className="rollzy-channel-arrow">↗</span>
               </a>
@@ -595,7 +595,7 @@ function RollzyBunnySection() {
                     alt="X"
                     className="rollzy-channel-logo-x"
                   />
-                  <span className="rollzy-channel-name">ROLLZYBUNNY</span>
+                  <span className="rollzy-channel-name">icecreamformail</span>
                 </span>
                 <span className="rollzy-channel-arrow">↗</span>
               </a>
@@ -613,7 +613,7 @@ function RollzyBunnySection() {
                     alt="Line OpenChat"
                     className="rollzy-channel-logo-opc"
                   />
-                  <span className="rollzy-channel-name">Rollzy Bunny - Rose BNK48 Supporters </span>
+                  <span className="rollzy-channel-name">IceCream for Mail's - Mail BNK48 THFC 🐱💌 </span>
                 </span>
                 <span className="rollzy-channel-arrow">↗</span>
               </a>
@@ -640,7 +640,7 @@ function Footer() {
       </footer> */}
 
       <footer className="footer">
-  <p className="footer-line1">-`♡´- Fansite Project made by RollzyBunny (inspired by Niya - Fan Website)</p>
+  <p className="footer-line1">-`♡´- Fansite Project made by BNK_Story </p>
   <p className="footer-line2">Original Content & Artist © by Independent Artist Management (iAM).</p>
 </footer>
     </>

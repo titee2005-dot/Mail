@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom"; 
 
-const SECTION_IDS = ["home", "about", "schedule", "highlight", "social", "gallery", "rollzy"];
+const SECTION_IDS = ["home", "about", "schedule", "discography", "highlight", "social", "gallery", "rollzy"];
 const HEADER_OFFSET = 80;
 
 function Navbar() {
@@ -258,7 +258,7 @@ function Navbar() {
           <div className="nav-main">
             <div className="nav-logo">
               <img src="/logo.png" alt="Rose's Garden Logo" className="nav-logo-img" />
-              <span>ROSE&apos;S GARDEN</span>
+              <span>Mail&apos;S</span>
             </div>
 
             <button type="button" className="nav-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
@@ -272,12 +272,13 @@ function Navbar() {
 
           <div className={`nav-links ${open ? "nav-links--open" : ""}`}>
             <a href="/#home" onClick={handleNavClick("home")} className={linkClass("home")}>Home</a>
-            <a href="/#about" onClick={handleNavClick("about")} className={linkClass("about")}>About Rose</a>
+            <a href="/#about" onClick={handleNavClick("about")} className={linkClass("about")}>About</a>
             <a href="/#schedule" onClick={handleNavClick("schedule")} className={linkClass("schedule")}>Schedule</a>
+            <a href="/#discography" onClick={handleNavClick("discography")} className={linkClass("discography")}>Discography</a>
             <a href="/#highlight" onClick={handleNavClick("highlight")} className={linkClass("highlight")}>Highlight</a>
             <a href="/#social" onClick={handleNavClick("social")} className={linkClass("social")}>Social Media</a>
             <a href="/#gallery" onClick={handleNavClick("gallery")} className={linkClass("gallery")}>Gallery</a>
-            <a href="/#rollzy" onClick={handleNavClick("rollzy")} className={linkClass("rollzy")}>Rollzy Bunny</a>
+            <a href="/#rollzy" onClick={handleNavClick("rollzy")} className={linkClass("rollzy")}>Mail's Fanbase</a>
 
             {/* กล่องควบคุมเมนู Special */}
             <div 
