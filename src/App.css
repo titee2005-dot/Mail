@@ -579,7 +579,8 @@ body {
 /* มือถือ */
 @media (max-width: 767px) {
   .hero-image-bg {
-    background-position: 35% 60%;   /* ตำแหน่งที่เหมาะที่สุด */
+    background-position: 40% 20%;   /* ตำแหน่งที่เหมาะที่สุด */
+    background-size: 300%;
   }
 }
 
@@ -3733,44 +3734,43 @@ text-align: left;     /* เหมือนตอนข้อความ */
 }
 
 /* ========================================= */
-/* แก้ไขหน้า About และ Discography ในมือถือ (อัปเดตล่าสุด) */
+/* แก้ไขรูปหน้า About มือถือ (กว้างเท่ากล่อง, สี่เหลี่ยมจัตุรัส) */
 /* ========================================= */
 @media (max-width: 767px) {
-
-  /* --- 1. หน้า ABOUT --- */
-  /* รูป: เอากรอบขาวออก, ปรับขนาดให้พอดีกับกล่องข้อความ และเล็กลงนิดหน่อย */
-  .pink-photo-frame {
-    width: 90% !important; /* ปรับให้รูปเล็กลงนิดนึง แต่ยังสมดุล */
-    padding: 0 !important; /* เอากรอบขาวหนาๆ ออก */
-    background: transparent !important;
-    box-shadow: none !important;
-    margin: 0 auto 15px !important;
-  }
-  .pink-photo-frame img {
-    border-radius: 20px !important;
+  
+  .pink-photo-wrapper {
+    width: 100%; /* ให้กรอบนอกกว้างเต็มพื้นที่ */
   }
   
-  .pink-info-card {
-    border-radius: 20px !important;
-    padding: 24px 16px !important;
+  .pink-photo-frame {
+    width: 100% !important; /* กว้างเท่ากล่องข้อความเป๊ะ */
+    padding: 0 !important; /* ลบขอบสีขาวออก */
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .pink-photo-frame img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* บังคับสัดส่วนให้เป็นสี่เหลี่ยมจัตุรัส */
+    object-fit: cover !important; /* ซูมภาพให้เต็มกรอบจัตุรัสพอดี (ภาพจะไม่เบี้ยว) */
+    border-radius: 20px !important; /* ปรับมุมให้โค้งมนเข้ากับกล่องข้อความ */
   }
 
-  /* ชื่อ: ให้อยู่บรรทัดเดียว ตรงกลาง */
+/* --- 1. หน้า ABOUT --- */
+  .pink-info-card {
+    padding: 20px !important; /* ลดขอบขาวรอบๆ ข้อมูล */
+  }
   .pink-name {
     font-size: 1.15rem !important;
     margin-bottom: 20px !important;
     text-align: center;
     white-space: nowrap; /* บังคับให้อยู่บรรทัดเดียว */
   }
-
-  /* ปรับสัดส่วน Born, Debut, Gen, Team ให้สวยงาม สมดุล */
   .pink-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 16px 8px !important;
-  }
-  .pink-item {
-    align-items: center; /* จัดข้อความให้อยู่กึ่งกลาง */
-    text-align: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px;
+    margin-bottom: 20px;
   }
   .pink-label {
     font-size: 0.65rem !important; /* ย่อหัวข้อให้ดูมินิมอล */
@@ -3782,21 +3782,21 @@ text-align: left;     /* เหมือนตอนข้อความ */
     font-weight: 500;
     color: #555 !important;
   }
-
-
-  /* --- 2. หน้า DISCOGRAPHY --- */
-  /* เปลี่ยนให้วิดีโอเรียงแนวตั้ง 1 คอลัมน์ (เหมือนภาพที่ 2-3) */
-  .disco-grid {
-    grid-template-columns: 1fr !important; /* บังคับ 1 แถว 1 กรอบ */
-    gap: 16px !important;
+  .pink-bio p {
+    font-size: 0.85rem !important; /* เล็กลงให้อ่านง่าย */
+    line-height: 1.6 !important;
   }
-
-  /* ซ่อนวิดีโออันที่ 4 (Coming Soon) ให้เหลือแค่ 3 อันบนมือถือ */
-  .disco-grid .disco-mini-card:last-child {
-    display: none !important;
+  .pink-more-info {
+    padding: 15px;
   }
-
-  /* ปรับขนาดตัวอักษรของวิดีโอให้พอดีกรอบแนวตั้ง */
+  .pink-list {
+    grid-template-columns: 1fr !important; /* เรียงแถวเดียวไม่ให้เบียดกันตกขอบ */
+    gap: 8px;
+  }
+  .pink-list li {
+    font-size: 0.85rem;
+  }
+/*discography*/
   .disco-featured-card {
     margin-top: 10px !important;
     margin-bottom: 24px !important;
@@ -3811,4 +3811,222 @@ text-align: left;     /* เหมือนตอนข้อความ */
   .disco-mini-body {
     padding: 16px !important;
   }
+  .disco-grid {
+    grid-template-columns: 1fr !important; /* บังคับ 1 แถว 1 กรอบ */
+    gap: 16px !important;
+  }
+
+  /* ซ่อนวิดีโออันที่ 4 (Coming Soon) ให้เหลือแค่ 3 อันบนมือถือ */
+  .disco-grid .disco-mini-card:last-child {
+    display: none !important;
+  }
+  /* ========================================= */
+  /* --- 2. หน้า DISCOGRAPHY (มือถือ) --- */
+  /* ========================================= */
+  
+  /* การ์ดวิดีโอเด่น (ใหญ่) */
+  .disco-featured-card {
+    margin-top: 10px !important;
+    margin-bottom: 24px !important;
+    border-radius: 20px !important; /* ลดความโค้งกรอบให้เล็กลงพอดีกับมือถือ */
+  }
+  .disco-featured-info {
+    padding: 16px 14px 18px !important; /* รีดกรอบขาวออกให้แนบชิดกับข้อความและวิดีโอ */
+  }
+  .disco-badge {
+    font-size: 0.65rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 10px !important; /* ลดระยะห่าง */
+  }
+  .disco-title-lg {
+    font-size: 1.3rem !important; /* ย่อชื่อเพลงลงนิดนึงให้สมดุล */
+    line-height: 1.2 !important;
+  }
+  .disco-meta-lg {
+    font-size: 0.8rem !important;
+    margin: 6px 0 10px !important; /* ลดช่องไฟบรรทัด */
+  }
+  .disco-desc-lg {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0 !important; /* เอาระยะห่างด้านล่างสุดทิ้งไปเลย */
+  }
+
+ /* ========================================= */
+  /* --- 2. หน้า DISCOGRAPHY (มือถือ - ปรับทุกอันให้เท่ากัน) --- */
+  /* ========================================= */
+  
+  /* บังคับให้การ์ดทุกใบ (ทั้งตัวเด่นและตัวเล็ก) มีระยะห่างเท่ากัน */
+  .discography-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important; /* เว้นระยะห่างระหว่างการ์ดทุกใบให้เท่ากันเป๊ะ */
+  }
+
+  /* ลบ margin ส่วนเกินของการ์ดอันแรกออก เพื่อใช้ gap ของ container แทน */
+  .disco-featured-card {
+    margin: 0 !important; 
+    border-radius: 20px !important;
+  }
+
+  /* ปรับให้การ์ดทุกใบมีสไตล์เดียวกัน (กรอบ, เงา, ความโค้ง) */
+  .disco-featured-card, 
+  .disco-mini-card {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 192, 203, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.15) !important;
+    overflow: hidden;
+  }
+
+  /* ปรับให้ส่วนเนื้อหาของการ์ดทุกใบมีขนาดเท่ากัน */
+  .disco-featured-info, 
+  .disco-mini-body {
+    padding: 16px 14px 20px !important; /* ช่องไฟข้างในเท่ากัน */
+    text-align: left !important; /* จัดชิดซ้ายให้เหมือนอันแรก */
+  }
+
+  /* ปรับขนาดตัวหนังสือให้เท่ากันทุกอัน */
+  .disco-title-lg, 
+  .disco-mini-title {
+    font-family: 'Space Grotesk', 'Mitr', sans-serif !important;
+    font-size: 1.1rem !important; /* ขนาดหัวข้อเท่ากัน */
+    color: #D83A7E !important;
+    margin: 6px 0 !important;
+    line-height: 1.3 !important;
+    display: block;
+  }
+
+  /* ปรับส่วน Tag/Badge (Featured / Music Video / Fancam) ให้ดูเหมือนกัน */
+  .disco-badge, 
+  .disco-mini-tag {
+    display: inline-block;
+    background: #ffb6c1 !important;
+    color: white !important;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    margin-bottom: 8px !important;
+  }
+
+  /* ปรับวันที่และรายละเอียดให้เท่ากัน */
+  .disco-meta-lg, 
+  .disco-mini-date {
+    font-size: 0.8rem !important;
+    color: #a07c89 !important;
+    margin: 0 !important;
+  }
+
+  /* ปรับ Grid ให้เรียง 1 คอลัมน์ และเว้นระยะเท่ากับตัวบน */
+  .disco-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* ซ่อนวิดีโออันที่ 4 ให้เหลือ 3 อันเหมือนเดิม */
+  .disco-grid .disco-mini-card:last-child {
+    display: none !important;
+  }
+  /* ปรับระยะห่างหัวข้อหน้า Disco ให้สมดุล (บน-ล่าง เท่ากัน) */
+  #discography .pink-section-header {
+    margin-top: 40px !important;    /* เพิ่มระยะด้านบนหัวข้อ */
+    margin-bottom: 40px !important; /* ปรับระยะด้านล่างให้เท่ากับด้านบน */
+  }
+
+  /* ปรับเส้นใต้หัวข้อให้ชิดขึ้นมาหน่อยเพื่อให้ดูเป็นกลุ่มก้อนเดียวกัน */
+  #discography .pink-line {
+    margin-top: 10px !important;
+  }
+  /* ========================================= */
+  /* --- 3. หน้า HIGHLIGHT (มือถือ - เล็กลง ไม่บังคน) --- */
+  /* ========================================= */
+  
+  .hl-final-main-card {
+    aspect-ratio: 16 / 9 !important; /* กลับมาล็อกสัดส่วนวิดีโอเหมือนเดิม */
+    margin-bottom: 12px !important;
+  }
+
+  /* ย้ายแถบข้อมูลกลับไปทับบนวิดีโอ แต่ทำให้จิ๋วลง */
+  .hl-final-info-bar {
+    position: absolute !important; 
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 20px 12px 10px !important; /* ไล่เฉดดำบางๆ ด้านล่าง */
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    pointer-events: none !important;
+  }
+
+  .hl-final-info-bar * { pointer-events: auto !important; }
+
+  .hl-final-text {
+    text-align: left;
+  }
+
+  .hl-final-title {
+    color: #ffffff !important;
+    font-size: 0.9rem !important; /* ย่อขนาดชื่อเพลงให้จิ๋วลง */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+    margin: 2px 0 !important;
+  }
+
+  .hl-final-sub {
+    color: rgba(255,255,255,0.8) !important;
+    font-size: 0.65rem !important; /* ย่อคำอธิบาย */
+  }
+
+  .hl-final-tag {
+    font-size: 0.55rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* ปุ่ม View Music Video แบบจิ๋วและโปร่งแสง */
+  .hl-final-link-btn {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-size: 0.6rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 2px;
+  }
+
+  /* แก้ไขปุ่ม Play ให้ดูเป็น UI มากขึ้น (ไม่ใช่อิโมจิเหลืองๆ) */
+  .hl-final-play-btn {
+    bottom: 50% !important;
+    transform: translate(-50%, 50%) !important;
+    width: 38px !important; /* เล็กลง */
+    height: 38px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: #ffffff !important;
+    font-size: 0.8rem !important; /* ปรับขนาดสัญลักษณ์ด้านใน */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    
+  }
+  /* ========================================= */
+/* เปลี่ยนวิดีโอให้แตะเพื่อหยุด/เล่น (เฉพาะมือถือ) */
+/* ========================================= */
+@media (max-width: 767px) {
+  
+  /* 1. ซ่อนปุ่ม Play/Pause ทิ้งไปเลย เพราะเราไม่ใช้แล้ว */
+  .hl-final-play-btn {
+    display: none !important;
+  }
+
+  /* 2. เปลี่ยนเคอร์เซอร์ของ Shield ให้รู้ว่ากดได้ */
+  .hl-final-shield {
+    cursor: pointer !important;
+    /* ย้ำให้ชัวร์ว่ากระจกแผ่นนี้รับการสัมผัสได้ 100% */
+    pointer-events: auto !important; 
+  }
+  
+}
 }

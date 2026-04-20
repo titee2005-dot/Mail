@@ -213,6 +213,12 @@ function HighlightSection() {
       );
       setIsPlaying(!isPlaying);
     }
+    
+  };
+  const handleShieldClick = (e) => {
+    if (window.innerWidth <= 767) {
+      togglePlay(e);
+    }
   };
 
   const mainVideoId = "jRVOQHriw2w";
@@ -238,7 +244,7 @@ function HighlightSection() {
           ></iframe>
           
           {/* กระจกใส (Shield): ทำให้ UI YouTube หายไปเองเพราะไม่รู้ว่ามีเมาส์ชี้ และกันการกดหยุดตรงกลางจอ */}
-          <div className="hl-final-shield"></div>
+          <div className="hl-final-shield" onClick={handleShieldClick}></div>
 
           {/* ปุ่มหยุด/เล่น (จุดเดียวที่กดหยุดได้) */}
           <button onClick={togglePlay} className="hl-final-play-btn">
