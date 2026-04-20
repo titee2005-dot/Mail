@@ -579,7 +579,7 @@ body {
 /* มือถือ */
 @media (max-width: 767px) {
   .hero-image-bg {
-    background-position: 60% 40%;   /* ตำแหน่งที่เหมาะที่สุด */
+    background-position: 50% 30%;   /* ตำแหน่งที่เหมาะที่สุด */
   }
 }
 
@@ -3732,5 +3732,101 @@ text-align: left;     /* เหมือนตอนข้อความ */
   }
 }
 
-/* Tokens Page */
 /* ========================================= */
+/* แก้อาการล้น/เบียด ในโหมดมือถือ (About, Discography, Highlight) */
+/* ========================================= */
+@media (max-width: 767px) {
+
+  /* --- 1. หน้า ABOUT --- */
+  .pink-info-card {
+    padding: 20px !important; /* ลดขอบขาวรอบๆ ข้อมูล */
+  }
+  .pink-name {
+    font-size: 1.4rem !important; /* ลดขนาดชื่อไม่ให้ตกบรรทัด */
+    margin-bottom: 16px;
+  }
+  .pink-grid {
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .pink-bio p {
+    font-size: 0.85rem !important; /* เล็กลงให้อ่านง่าย */
+    line-height: 1.6 !important;
+  }
+  .pink-more-info {
+    padding: 15px;
+  }
+  .pink-list {
+    grid-template-columns: 1fr !important; /* เรียงแถวเดียวไม่ให้เบียดกันตกขอบ */
+    gap: 8px;
+  }
+  .pink-list li {
+    font-size: 0.85rem;
+  }
+
+  /* --- 2. หน้า DISCOGRAPHY --- */
+  /* การ์ดวิดีโอใหญ่ */
+  .disco-featured-info {
+    padding: 20px 15px !important;
+  }
+  .disco-title-lg {
+    font-size: 1.6rem !important; /* ลดขนาดชื่อเพลง */
+  }
+  .disco-meta-lg {
+    font-size: 0.85rem;
+    margin: 8px 0;
+  }
+  .disco-desc-lg {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  .disco-badge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* การ์ดวิดีโอเล็ก */
+  .disco-grid {
+    gap: 12px;
+  }
+  .disco-mini-body {
+    padding: 12px 10px;
+  }
+  .disco-mini-title {
+    font-size: 0.95rem !important; /* ลดขนาดให้พอดีกรอบ */
+    line-height: 1.3;
+  }
+  .disco-mini-tag {
+    font-size: 0.6rem;
+  }
+  .disco-mini-date {
+    font-size: 0.75rem;
+  }
+
+  /* --- 3. หน้า HIGHLIGHT --- */
+  .hl-final-info-bar {
+    padding: 20px 15px 15px;
+    flex-direction: column; /* ย้ายปุ่มไปอยู่ใต้ข้อความ */
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hl-final-title {
+    font-size: 1.2rem;
+  }
+  .hl-final-sub {
+    font-size: 0.75rem;
+  }
+  .hl-final-play-btn {
+    /* ย้ายปุ่ม Play ไปอยู่ตรงกลางวิดีโอ จะได้ไม่ทับข้อความ */
+    bottom: 55%;
+    transform: translate(-50%, 50%);
+    width: 42px;
+    height: 42px;
+  }
+  .hl-final-link-btn {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+}

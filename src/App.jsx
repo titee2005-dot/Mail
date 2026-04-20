@@ -119,7 +119,7 @@ function DiscographySection() {
       type: "Music Video",
       date: "Oct 11, 2025",
       desc: "จะยังไงก็รักเธอ / BNK48 20th Single Coupling Song",
-      video: "https://www.youtube.com/embed/jRVOQHriw2w?si=JrkTROA3HZVPAFqL", 
+      video: "https://www.youtube.com/embed/jRVOQHriw2w?si=JrkTROA3HZVPAF", 
       featured: true,
       badge: "Featured Release"
     },
@@ -128,14 +128,14 @@ function DiscographySection() {
       title: "THEN & NOW",
       type: "About Rose",
       date: "Self-Reflection",
-      video: "https://www.youtube.com/embed/_54MEK1_NUU?si=t5aoIrpzuhV6hhad"
+      video: "https://www.youtube.com/embed/_54MEK1_NUU?si=t5aoIrpzuhV6hha"
     },
     {
       id: 3,
       title: "MIX- Special Olympic",
       type: "Fancam",
       date: "Phoenixcz Room",
-      video: "https://www.youtube.com/embed/HiIjepatb2A?si=cHnXtO9jMIp10wmq"
+      video: "https://www.youtube.com/embed/HiIjepatb2A?si=cHnXtO9jMIp10w"
     },
     {
       id: 4,
