@@ -103,9 +103,10 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(253, 251, 255, 0.95);
-  border-bottom: 1px solid rgba(197, 116, 255, 0.15);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 116, 204, 0.15);
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
 }
 
 .nav {
@@ -221,7 +222,7 @@ body {
   border-radius: 999px;
 
   background: #ffffff;
-  border: 2px solid #2c2537;
+  border: 2px solid #37252e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,7 +269,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    border: 1px solid rgba(132, 107, 196, 0.4);
+    border: 1px solid rgba(196, 107, 141, 0.4);
     background: rgba(255, 255, 255, 0.96);
     padding: 6px 8px;
     cursor: pointer;
@@ -763,6 +764,18 @@ body {
   border-radius: 20px;
   display: block;
 }
+@media (max-width: 767px) {
+
+  .pink-photo-frame img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; 
+    object-fit: cover !important; 
+    border-radius: 20px !important;
+
+    /* 🌟 เพิ่มบรรทัดนี้เพื่อขยับตำแหน่งภาพ (แนวนอน แนวตั้ง) */
+    object-position: center 15% !important; 
+  }
+}
 
 /* Info Card */
 .pink-info-card {
@@ -1252,6 +1265,41 @@ body {
 
 }
 
+
+/* ========================================= */
+/* ย้ายปุ่มไปไว้ มุมขวา (ระหว่างหัวข้อ กับ กรอบ Event) - เฉพาะมือถือ */
+/* ========================================= */
+
+@media (max-width: 767px) {
+  /* 1. เตรียมพื้นที่ด้านล่างหัวข้อให้ปุ่มไปวางได้ */
+  .all-schedule-page .events-header {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* ให้หัวข้อ ALL SCHEDULE อยู่กลางเหมือนเดิม */
+    
+    /* 🌟 เพิ่มระยะห่างด้านล่างหัวข้อ เพื่อเป็นที่วางปุ่ม */
+    padding-bottom: 45px !important; 
+    margin-bottom: 20px !important;
+  }
+
+  /* 2. ดันปุ่มลงมาไว้ด้านล่างขวาของส่วนหัว (จะอยู่ระหว่างหัวข้อกับกรอบพอดี) */
+  .all-schedule-page .all-schedule-btn {
+    position: absolute !important;
+    /* 🌟 เปลี่ยนจาก top: 0 เป็น bottom: 0 เพื่อให้อยู่ใต้หัวข้อ */
+    bottom: 0 !important; 
+    right: 0 !important;
+    top: auto !important;
+    
+    margin: 0 !important;
+    padding: 7px 18px !important; /* ขนาดกะทัดรัด */
+    font-size: 0.8rem !important;
+    
+    /* ล้างค่าจัดกึ่งกลางออก */
+    left: auto !important;
+    transform: none !important;
+  }
+}
 /* ========================================= */
 /* DISCOGRAPHY SECTION (Pink Pastel Style) */
 /* ========================================= */
@@ -3823,6 +3871,13 @@ text-align: left;     /* เหมือนตอนข้อความ */
   object-position: center 20%;
   display: block; /* ลบช่องว่างล่างแปลกๆ ของรูป */
 }
+@media (max-width: 767px) {
+  .rollzy-image-right img {
+    /* มือถือกรอบมันเตี้ยกว่า ลองปรับเป็น 0% เพื่อดึงภาพลงมาให้สุดขอบบน */
+    object-position: center -100% !important; 
+    
+  }
+}
 
 /* 6. หน้ากากไล่สีเฟดภาพ (บังคับให้หายสนิทก่อนถึงตัวหนังสือ) */
 .rollzy-image-gradient-overlay {
@@ -4615,5 +4670,77 @@ text-align: left;     /* เหมือนตอนข้อความ */
   .pink-line {
     width: 30px !important; /* ย่อเส้นลงตามขนาดหัวข้อ */
     margin-top: 8px !important;
+  }
+}
+.nav-links a {
+  font-family: 'Kanit', sans-serif !important;
+  font-size: 0.85rem !important;
+  padding: 8px 16px !important;
+  margin: 0 2px !important;
+  color: #987284 !important; /* 🌟 สีเทาอมชมพู */
+  border-radius: 999px !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+.nav-links a:hover, 
+.nav-links .nav-link--active {
+  color: #d63471 !important; /* 🌟 ตัวอักษรสีชมพูเข้ม */
+  background: #feeaf1 !important; /* 🌟 แคปซูลไฮไลท์สีชมพูอ่อน */
+  box-shadow: none !important; /* คลีนๆ แบบภาพ 2 */
+  font-weight: 600 !important;
+}
+
+
+/* ========================================= */
+/* จัดระเบียบระยะห่างและฟอนต์ Discography ในมือถือให้สมดุล */
+/* ========================================= */
+
+@media (max-width: 767px) {
+  
+  /* 1. ลดระยะห่างระหว่างการ์ดวิดีโอแต่ละอันลงนิดนึง */
+  .discography-container,
+  .disco-grid {
+    gap: 16px !important; 
+  }
+
+  /* 2. จัดระเบียบช่องไฟภายในกล่อง (เวทมนตร์อยู่ตรงนี้) */
+  .disco-featured-info, 
+  .disco-mini-body {
+    padding: 14px 16px 18px !important; /* ปรับลดพื้นที่ว่างรอบๆ ให้อ่านสบายตา */
+    display: flex !important;
+    flex-direction: column !important;
+    /* 🌟 ใช้ gap คุมระยะห่างทุกบรรทัดให้ห่างเท่าๆ กัน (ไม่ต้องพึ่ง margin) */
+    gap: 6px !important; 
+  }
+
+  /* 3. ปรับขนาด Badge (ป้ายสีชมพู) */
+  .disco-badge, 
+  .disco-mini-tag {
+    font-size: 0.6rem !important;
+    padding: 3px 10px !important;
+    margin: 0 !important; /* ล้าง margin เก่าทิ้ง */
+    align-self: flex-start !important; /* บังคับให้ป้ายอยู่ชิดซ้ายและไม่ยืด */
+  }
+
+  /* 4. ปรับขนาดหัวข้อ (ชื่อเพลง/คลิป) */
+  .disco-title-lg, 
+  .disco-mini-title {
+    font-size: 1.05rem !important; /* ปรับให้เล็กลงนิดนึง จะได้ไม่ดูอึดอัด */
+    line-height: 1.60 !important;
+    margin: 0 !important; /* ล้าง margin เก่าทิ้ง */
+  }
+
+  /* 5. ปรับวันที่และประเภท (ตัวอักษรสีเทา) */
+  .disco-meta-lg, 
+  .disco-mini-date {
+    font-size: 0.75rem !important;
+    margin: 0 !important;
+  }
+
+  /* 6. คำอธิบายบรรทัดสุดท้าย */
+  .disco-desc-lg {
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
   }
 }

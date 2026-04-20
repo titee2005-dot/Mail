@@ -298,7 +298,7 @@ function SocialSection() {
       <div className="pink-section-header">
         <h2>Social Media</h2>
         <p style={{ color: "#a07c89", fontSize: "0.95rem", margin: "8px 0 0", textAlign: "center", fontWeight: "500" }}>
-          ❀ ช่องทางการติดตาม ❀
+         
         </p>
         <div className="pink-line"></div>
       </div>
@@ -431,7 +431,7 @@ function GallerySection() {
         <div className="pink-section-header">
           <h2>Gallery</h2>
           <p style={{ color: "#a07c89", fontSize: "0.95rem", margin: "8px 0 0", textAlign: "center", fontWeight: "500" }}>
-            ❀ รวมโมเมนต์น่ารัก ๆ ของน้อง ❀
+          
           </p>
           <div className="pink-line"></div>
         </div>
