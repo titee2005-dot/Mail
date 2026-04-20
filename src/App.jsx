@@ -84,7 +84,7 @@ function AboutSection() {
 
           <div className="pink-bio">
             <p>
-              "หนูมีความฝันอยากเป็นศิลปิน อยากเป็นนักร้องมาตั้งแต่เด็กๆ แต่หลังจากได้รู้จัก BNK48 ช่วงคุกกี้เสี่ยงทายก็ทำให้มีความรู้สึกอยากเป็นไอดอลมาตั้งแต่ตอนนั้น ในอีก 10 ปีข้างหน้า หนูอยากเห็นตัวเองที่ยังเป็นไอดอลอยู่ ยังมี Passion ยังไม่หมดไฟ และยังตั้งใจทำตามความฝันต่อไป"
+              "To be Update"
             </p>
           </div>
 
@@ -121,28 +121,28 @@ function DiscographySection() {
       desc: "จะยังไงก็รักเธอ / BNK48 20th Single Coupling Song",
       video: "https://www.youtube.com/embed/jRVOQHriw2w?si=JrkTROA3HZVPAF", 
       featured: true,
-      badge: "Featured Release"
+      badge: "Debut Song"
     },
     {
       id: 2,
-      title: "THEN & NOW",
-      type: "About Rose",
-      date: "Self-Reflection",
-      video: "https://www.youtube.com/embed/_54MEK1_NUU?si=t5aoIrpzuhV6hha"
+      title: "【PV】ช็อต!!!! (OST. Shock Me Girls รักช็อตใจ ยัยช็อตฟีล)",
+      type: "PV",
+      date: "Premiered Mar 6, 2026",
+      video: "https://www.youtube.com/embed/D4XqskuDylo?si=VvMJK0yK5Yjh8GxK"
     },
     {
       id: 3,
-      title: "MIX- Special Olympic",
+      title: "Coming Soon",
       type: "Fancam",
-      date: "Phoenixcz Room",
-      video: "https://www.youtube.com/embed/HiIjepatb2A?si=cHnXtO9jMIp10w"
+      date: "By...",
+      video: ""
     },
     {
       id: 4,
       title: "Coming Soon",
-      type: "Highlight",
-      date: "2025",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ" // ใส่ลิงก์คลิปที่ 4
+      type: "Fancam",
+      date: "By...",
+      video: "" // ใส่ลิงก์คลิปที่ 4
     }
   ];
 
@@ -221,7 +221,7 @@ function HighlightSection() {
     }
   };
 
-  const mainVideoId = "jRVOQHriw2w";
+  const mainVideoId = "PKpjhomsoHo";
   // เปิด controls=1 เพื่อให้ UI ยูทูปขึ้นตอนโหลด แต่จะหายไปเองเพราะมี shield บังเมาส์ไว้
   const mainVideoUrl = `https://www.youtube.com/embed/${mainVideoId}?autoplay=1&mute=1&loop=1&playlist=${mainVideoId}&controls=1&enablejsapi=1&modestbranding=1&rel=0`;
 
@@ -255,11 +255,11 @@ function HighlightSection() {
           <div className="hl-final-info-bar">
             <div className="hl-final-text">
               <span className="hl-final-tag">★ NEW RELEASE</span>
-              <h3 className="hl-final-title">จะยังไงก็รักเธอ</h3>
-              <p className="hl-final-sub">BNK48 20th Single Coupling Song</p>
+              <h3 className="hl-final-title">Mail พาท่องโลก "สัตว์ป่า"</h3>
+              <p className="hl-final-sub">Vlog</p>
             </div>
             <a href={`https://www.youtube.com/watch?v=${mainVideoId}`} target="_blank" rel="noreferrer" className="hl-final-link-btn">
-              View Music Video ↗
+              View Full Video ↗
             </a>
           </div>
         </div>
@@ -269,19 +269,19 @@ function HighlightSection() {
   
 <div className="hl-final-sub-grid">
   {/* คลิปเล็ก 1 */}
-  <a href="https://youtu.be/_54MEK1_NUU" target="_blank" rel="noreferrer" className="hl-final-sub-card">
+  <a href="https://youtu.be/ogHVge7P84U" target="_blank" rel="noreferrer" className="hl-final-sub-card">
     <div className="hl-sub-img-wrapper">
-      <img src="https://img.youtube.com/vi/_54MEK1_NUU/maxresdefault.jpg" alt="THEN & NOW" />
+      <img src="https://img.youtube.com/vi/ogHVge7P84U/maxresdefault.jpg" alt="THEN & NOW" />
     </div>
     <div className="hl-final-sub-label">THEN & NOW</div>
   </a>
   
   {/* คลิปเล็ก 2 */}
-  <a href="https://youtu.be/HiIjepatb2A" target="_blank" rel="noreferrer" className="hl-final-sub-card">
+  <a href="https://youtu.be/rND5hs5vy44" target="_blank" rel="noreferrer" className="hl-final-sub-card">
     <div className="hl-sub-img-wrapper">
-      <img src="https://img.youtube.com/vi/HiIjepatb2A/maxresdefault.jpg" alt="Fancam Mix" />
+      <img src="https://img.youtube.com/vi/rND5hs5vy44/maxresdefault.jpg" alt="Fancam Mix" />
     </div>
-    <div className="hl-final-sub-label">MIX - Special Olympic</div>
+    <div className="hl-final-sub-label">พี่ดูปากหนูนะคะ</div>
   </a>
 </div>
     </div>
@@ -413,61 +413,57 @@ function GallerySection() {
   const [selectedItem, setSelectedItem] = useState(null);
   
   const items = [
-    { id: 1, src: "/hachicha2.JPG", big: true,label: "Hachicha", credit: "Rollzy_Bunny"}, // รูปใหญ่ 4x4
+    { id: 1, src: "/Mail-cover5.JPG", label: "Hachicha", credit: "Rollzy_Bunny"}, 
     { id: 2, src: "/jx1.JPG", label: "JapanExpo", credit: "Rollzy_Bunny" },
     { id: 3, src: "/bdpic1.JPG", label: "Halloween", credit: "Rollzy_Bunny" },
     { id: 4, src: "/hwpic2.JPG", label: "Halloween", credit: "Rollzy_Bunny" },
     { id: 5, src: "/memepic2.JPG", label: "Meme", credit: "Rollzy_Bunny" },
-    { id: 6, src: "/hachicha1.JPG", label: "Hachicha", credit: "Rollzy_Bunny", },
-    { id: 7, src: "/hwpic5.JPG", mobileOnly: true, label: "Halloween", credit: "BNK_Story" }, // รูปเฉพาะมือถือ
+    { id: 6, src: "/hachicha1.JPG", label: "Hachicha", credit: "Rollzy_Bunny" },
+    { id: 7, src: "/hwpic5.JPG", label: "Halloween", credit: "BNK_Story" }, 
+    // เพิ่มรูปที่ 8 เข้าไปเพื่อให้ตารางเต็ม 2 แถว แถวละ 4 พอดี
+    { id: 8, src: "/hwpic1.JPG", label: "Event", credit: "Rollzy_Bunny" } 
   ];
 
   return (
     <section id="gallery" className="page-section page-section--tone1">
       <div className="page-section-inner">
-        <div className="gallery-header">
-          <div className="section-header">
-            <h2>Gallery</h2>
-            <p>รวมโมเมนต์น่ารัก ๆ ของน้อง</p>
-          </div>
+        
+        <div className="pink-section-header">
+          <h2>Gallery</h2>
+          <p style={{ color: "#a07c89", fontSize: "0.95rem", margin: "8px 0 0", textAlign: "center", fontWeight: "500" }}>
+            ❀ รวมโมเมนต์น่ารัก ๆ ของน้อง ❀
+          </p>
+          <div className="pink-line"></div>
         </div>
 
         <div className="gallery-home-grid">
           {items.map((item) => (
-            <div
-              key={item.id}
-              className={
-                "gallery-home-cell" +
-                (item.big ? " gallery-home-cell--big" : "") +
-                (item.mobileOnly ? " gallery-home-cell--mobile" : "")
-              }
-            >
+            <div key={item.id} className="gallery-home-cell">
               <div className="home-gallery-wrapper">
-    <img
-      src={item.src}
-      alt=""
-      className="home-gallery-img"
-      onClick={() => setSelectedItem(item)}
-      
-    />
+                <img
+                  src={item.src}
+                  alt=""
+                  className="home-gallery-img"
+                  onClick={() => setSelectedItem(item)}
+                />
+                {/* แถบสีดำตอน Hover ยังอยู่เหมือนเดิม */}
+                <div className="home-gallery-overlay">
+                  <h3>{item.label || "Coming Soon"}</h3>
+                  <p>By {item.credit || "ระบุชื่อเจ้าของภาพ"}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
-    {/* overlay ที่จะขึ้นตอน hover */}
-    <div className="home-gallery-overlay">
-      <h3>{item.label || "Coming Soon"}</h3>
-      <p>By {item.credit || "ระบุชื่อเจ้าของภาพ"}</p>
-    </div>
-  </div>
-</div>
-        ))}
-      </div>
-
-      {/* Modal แบบเดียวกับหน้า All Gallery */}
-      {selectedItem && (
-        <GalleryModal item={selectedItem} onClose={() => setSelectedItem(null)} />
-      )}
-         <div className="gallery-all-wrapper">
+        {selectedItem && (
+          <GalleryModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+        )}
+        
+        <div className="gallery-all-wrapper">
+          {/* เปลี่ยนชื่อปุ่มตรงนี้ */}
           <a href="/gallery" className="gallery-all-btn">
-            All
+            View More Photos
           </a>
         </div>
       </div>
@@ -478,83 +474,58 @@ function GallerySection() {
 
 /*Rollzy Bunny*/
 
+// src/App.jsx ในส่วน function RollzyBunnySection()
+
 function RollzyBunnySection() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="rollzy" className="page-section page-section--tone1">
-      <div className="page-section-inner rollzy-layout">
-        {/* ฝั่งซ้าย: ข้อความ + ปุ่ม */}
-        <div className="rollzy-left">
-          <img src="rollzy-title.png" alt="Rollzy Bunny" className="title-image" />
-          <p className="rollzy-lead">
-            Mail BNK48 Supporters 𐔌՞. .՞𐦯
-          </p>
-          <p className="rollzy-subtitle">
-            มาร่วม Support เมลไปด้วยกัน～
-          </p>
-
-        <div className="rollzy-actions-row">
-            <div className="rollzy-actions">
-              <a
-                href="https://line.me/ti/g2/9XmcfZzUkbUwRZYcnDu-QWpmB4oO1gveVPVj1g?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rollzy-btn rollzy-btn--primary"
-              >
-                เข้าร่วม OpenChat
-              </a>
-
-              <button
-                type="button"
-                className="rollzy-btn rollzy-btn--ghost"
-                onClick={() => setOpen(true)}
-              >
-                ช่องทางแฟนด้อมทั้งหมด
-              </button>
-            </div>
-
-            {/* รูปเล็กสำหรับมือถือ อยู่ขวาของปุ่ม */}
-            <div className="rollzy-mobile-preview">
-              <div className="rollzy-preview-card">
-                <div className="rollzy-preview-grid">
-                  <img src="/sns.jpeg" alt="Rollzy Bunny SNS" />
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="rollzy-split-layout">
+      {/* ฝั่งซ้าย: เนื้อหาข้อความ */}
+      <div className="rollzy-content-left">
+        <div className="gradient-section-header left-align">
+          <h2>Mail BNK48<br/>Supporters</h2>
         </div>
+ <p className="rollzy-subtitle--left">
+          มาร่วมเป็นส่วนหนึ่งในการ Support น้องเมลไปด้วยกันนน 💌
+        </p>
 
-        {/* ฝั่งขวา: รูป preview (เช่น รูปหน้าเพจ FB / layout สวย ๆ ) */}
-        <div className="rollzy-right">
-  <div className="rollzy-preview-card">
-    <div className="rollzy-preview-grid">
-      <img src="/sns.jpeg" alt="Rollzy photo 1" />
-      <img src="/sns3.jpeg" alt="Rollzy photo 2" />
-    </div>
-  </div>
-</div>
+       
+        <div className="rollzy-actions--left">
+          <a
+            href="https://line.me/ti/g2/9XmcfZzUkbUwRZYcnDu-QWpmB4oO1gveVPVj1g?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rollzy-btn rollzy-btn--primary"
+          >
+            เข้าร่วม OpenChat
+          </a>
+
+          <button
+            type="button"
+            className="rollzy-btn rollzy-btn--ghost"
+            onClick={() => setOpen(true)}
+          >
+            ช่องทางแฟนด้อมทั้งหมด
+          </button>
+        </div>
       </div>
 
-      {/* Modal / Popup */}
-      {open && (
-        <div
-          className="rollzy-modal-backdrop"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="rollzy-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="rollzy-modal-title">ช่องทางติดตามแฟนด้อม</h3>
-            <p className="rollzy-modal-text">
-              สามารถติดตามแฟนด้อมได้จากด้านล่างนี้
-            </p>
+      {/* ฝั่งขวา: รูปภาพที่ขยายเต็มขอบด้านขวา */}
+      <div className="rollzy-image-right">
+        <img src="/Mail-cover2.JPG" alt="Mail BNK48" />
+        <div className="rollzy-image-gradient-overlay"></div>
+      </div>
 
+      {/* Modal (ส่วนนี้คงเดิม) */}
+      {open && (
+        <div className="rollzy-modal-backdrop" onClick={() => setOpen(false)}>
+          <div className="rollzy-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="rollzy-modal-title">ช่องทางติดตามแฟนด้อม</h3>
             <div className="rollzy-channel-list">
-              {/* Facebook */}
+             {/* Facebook */}
               <a
-                href="https://www.facebook.com/ROLLZYBUNNY"
+                href="https://www.facebook.com/icecreamformail.thfc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rollzy-channel rollzy-channel--fb"
@@ -572,7 +543,7 @@ function RollzyBunnySection() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/rollzybunny?igsh=MTVremY3NTltb29zZw=="
+                href="https://www.instagram.com/icecreamformail.thfc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rollzy-channel rollzy-channel--ig"
@@ -590,7 +561,7 @@ function RollzyBunnySection() {
 
               {/* X */}
               <a
-                href="https://x.com/rollzybunny?s=21"
+                href="https://x.com/icecreamformail"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rollzy-channel rollzy-channel--x"
@@ -608,7 +579,7 @@ function RollzyBunnySection() {
 
               {/* Line OpenChat */}
               <a
-                href="https://line.me/ti/g2/Unlc6VfjqNXos90q-mWUW80tatHddPT-11-3Gg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default/"
+                href="https://line.me/ti/g2/9XmcfZzUkbUwRZYcnDu-QWpmB4oO1gveVPVj1g?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rollzy-channel rollzy-channel--line"
@@ -624,17 +595,13 @@ function RollzyBunnySection() {
                 <span className="rollzy-channel-arrow">↗</span>
               </a>
             </div>
-
-            <button
-              className="rollzy-modal-close"
-              onClick={() => setOpen(false)}
-            >
-              <strong>ปิดหน้าต่าง</strong>
+            <button className="rollzy-modal-close" onClick={() => setOpen(false)}>
+              ปิดหน้าต่าง
             </button>
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 }
 

@@ -739,7 +739,7 @@ body {
 @media (min-width: 992px) {
   .pink-about-content {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
   }
 }
@@ -751,7 +751,7 @@ body {
 
 .pink-photo-frame {
   width: 280px;
-  padding: 15px;
+  padding: 0px;
   background: #ffffff;
   border-radius: 30px;
   box-shadow: 0 15px 35px rgba(255, 182, 193, 0.2);
@@ -1713,7 +1713,7 @@ body {
   display: grid;
   grid-template-columns: 1fr; /* บนมือถือเรียงลง */
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* สไตล์การ์ดโซเชียลแบบกระจกฝ้า (Glassmorphism) */
@@ -2030,6 +2030,35 @@ body {
   }
 }
 
+/* ========================================= */
+/* แก้ไขกรอบ Social Embed ในมือถือ (ขยาย IG ให้เท่า TikTok) */
+/* ========================================= */
+@media (max-width: 767px) {
+  
+  /* ปรับความสูงกล่อง Embed ทั้ง IG และ TikTok ให้เท่ากัน */
+  .social-embed {
+    height: 480px !important; /* 🌟 ขยายความสูงให้พอดีเห็นโพสต์ */
+    overflow: hidden;
+    padding: 10px !important;
+  }
+
+  /* บังคับให้ iframe ของ Instagram ขยายเต็มพื้นที่กล่อง */
+  .social-embed--ig iframe {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 12px;
+  }
+
+  /* ปรับ TikTok ให้สูงเท่ากันเพื่อความบาลานซ์ */
+  .social-embed--tt {
+    height: 480px !important;
+  }
+  
+  .social-embed--tt iframe {
+    height: 100% !important;
+  }
+}
+
 /* ===== GALLERY SECTION (หน้าแรก) ===== */
 #gallery .section-header h2 {
   font-family: "Bebas Neue", sans-serif;
@@ -2160,6 +2189,69 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr)); /* เดสก์ท็อป 3 คอลัมน์ */
     gap: 4px;
   }
+}
+/* ========================================= */
+/* จัดตาราง GALLERY หน้าแรก (4 คอลัมน์) และ ปุ่ม View More */
+/* ========================================= */
+
+/* 1. บังคับ Grid ให้เป็น 4 คอลัมน์ */
+.gallery-home-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+}
+
+/* 2. ลบล้างรูปใหญ่ (เผื่อโค้ดเก่าค้าง) และบังคับให้ทุกรูปเป็นจัตุรัส */
+.gallery-home-cell, 
+.gallery-home-cell--big {
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
+  aspect-ratio: 1 / 1 !important; 
+  border-radius: 12px !important;
+  display: block !important;
+}
+
+/* 3. สำหรับมือถือ (หน้าจอเล็ก) ให้เรียง 2 คอลัมน์ */
+@media (max-width: 767px) {
+  .gallery-home-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+}
+
+/* 4. ดีไซน์ปุ่ม View More Photos (โทนชมพูพาสเทล) */
+.gallery-all-btn {
+  padding: 12px 32px !important; 
+  border-radius: 999px !important; 
+  border: none !important; 
+  background: linear-gradient(90deg, #ff9a9e 0%, #ffc0cb 100%) !important; 
+  font-family: 'Space Grotesk', 'Mitr', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important; 
+  text-decoration: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 16px rgba(255, 154, 158, 0.4) !important; 
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.gallery-all-btn:hover {
+  transform: translateY(-3px) !important; 
+  box-shadow: 0 8px 20px rgba(255, 154, 158, 0.6) !important; 
+  background: linear-gradient(90deg, #ff8a8e 0%, #fdbfdf 100%) !important; 
+  color: #ffffff !important;
+}
+/* ========================================= */
+/* ดึงปุ่ม View More Photos ให้ชิดรูปมากขึ้น */
+/* ========================================= */
+
+.gallery-all-wrapper {
+  margin-top: 35px !important;    /* ปรับลดระยะห่างด้านบน (ถ้าอยากให้ชิดกว่านี้ เปลี่ยนเป็น 10px หรือ 5px ได้เลยครับ) */
+  margin-bottom: 30px !important; /* ระยะห่างด้านล่างก่อนจบ Section */
+  padding-top: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 /* ===== GALLERY PAGE (หน้า /gallery) ===== */
@@ -2465,10 +2557,7 @@ body {
 /* ===== GRID 9*9 (3 แถว แถวละ 3 รูป) ===== */
 
 .gallery-home-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-rows: auto !important;
 }
 
 .gallery-home-cell {
@@ -2765,6 +2854,64 @@ transform: scale(1.1);
     font-family: "Bebas Neue", sans-serif;
   }
 }
+
+/* all gallery */
+/* ========================================= */
+/* ปรับหน้า ALL GALLERY เป็นโทนชมพูพาสเทล */
+/* ========================================= */
+
+/* 1. เปลี่ยนพื้นหลังทั้งหน้าให้เป็นชมพูอ่อนไล่เฉด */
+.gallery-page-bg {
+  background: linear-gradient(180deg, #ffffff 0%, #fff0f5 100%) !important;
+  min-height: 100vh;
+  padding-top: 40px !important;
+}
+
+/* 2. จัดตำแหน่งปุ่ม Back */
+.gallery-back-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+/* 3. ดีไซน์ปุ่ม Back ให้เหมือน View More Photos */
+.pink-back-btn {
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  background: linear-gradient(90deg, #ff9aec 0%, #d0c0ff 100%) !important;
+  font-family: 'Space Grotesk', 'Mitr', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+ /* box-shadow: 0 4px 12px rgba(255, 154, 252, 0.3) !important; */
+  transition: all 0.3s ease !important;
+}
+
+.pink-back-btn:hover {
+  transform: translateX(-5px) !important; /* เลื่อนไปทางซ้ายนิดหน่อยตอนชี้ */
+  box-shadow: 0 6px 16px rgba(154, 171, 255, 0.5) !important;
+  background: linear-gradient(90deg, #bd8aff 0%, #bfddfd 100%) !important;
+}
+
+/* 4. ปรับสีตัวหนังสือในหน้า All Gallery ให้เข้ากับธีม */
+.gallery-page-header h2 {
+  color: #ffb6c1 !important;
+}
+
+/* 5. ปรับแต่ง Tabs ให้ดูนุ่มนวลขึ้น */
+.gallery-tabs {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 192, 203, 0.4) !important;
+}
+
+.gallery-tab--active {
+  background: linear-gradient(135deg, #ff9a9e, #ffc0cb) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.4) !important;
+}
+
 
 /* ===== Rollzy Bunny – layout ด้านนอก ===== */
 
@@ -3365,6 +3512,398 @@ text-align: left;     /* เหมือนตอนข้อความ */
     text-align: left !important;         /* กันการจัดกึ่งกลางแนวนอน */
   }
 }
+
+/*อันใหม่ Support*/
+/* ========================================= */
+/* ปรับแต่งปุ่มทั้งหมดในส่วน MAIL SUPPORTERS (พาสเทล) */
+/* ========================================= */
+
+/* 1. ปุ่มหลัก (เข้าร่วม OpenChat) - สีชมพูไล่เฉด */
+.rollzy-btn--primary {
+  /* 🌟 ไล่สีเขียวมิ้นท์พาสเทล (Line OpenChat Tone) */
+  background: linear-gradient(135deg, #8ce4c6 0%, #a3e9be 100%) !important;
+  color: #ffffff !important; /* 🌟 ตัวอักษรขาวตามสั่ง */
+  border: none !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 16px rgba(140, 228, 198, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/*.rollzy-btn--primary:hover {
+  /* สลับเฉดตอนชี้ให้ดูสว่างขึ้น */
+/*  background: linear-gradient(135deg, #a3e9be 0%, #d2f9e1 100%) !important;
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 10px 25px rgba(163, 233, 190, 0.5) !important;
+} 
+
+/* 2. ปุ่มรอง "ช่องทางแฟนด้อมทั้งหมด" */
+.rollzy-btn--ghost {
+  /* 🌟 ใส่การไล่สีชมพู-ฟ้าพาสเทล (Cotton Candy) ตั้งแต่สภาวะปกติ */
+  background: linear-gradient(135deg, #ffc0cb 0%, #e0c3fc 50%, #a1c4fd 100%) !important;
+  
+  /* 🌟 ปรับตัวอักษรเป็นสีขาวเพื่อให้เด่นและอ่านง่ายบนพื้นสีรุ้ง */
+  color: #ffffff !important; 
+  
+  /* 🌟 ลบกรอบออกเพื่อให้ดูเป็นแผ่นนุ่มๆ ลอยอยู่บนพื้นเว็บ */
+  border: none !important; 
+  
+  box-shadow: 0 4px 12px rgba(161, 196, 253, 0.25) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* 🌟 ตอนชี้: โทนชมพูฟ้าพาสเทล + ไม่มีกรอบ + ตัวอักษรขาว */
+.rollzy-btn--ghost:hover {
+  /* ไล่สี Cotton Candy (ชมพู-ม่วง-ฟ้า) */
+  background: linear-gradient(135deg, #ffc0cb 0%, #e0c3fc 50%, #a1c4fd 100%) !important;
+  color: #ffffff !important; /* เปลี่ยนเป็นสีขาวเพื่อให้เด่นบนพื้นสีรุ้ง */
+  border: none !important; /* 🌟 ลบกรอบออกตอนชี้ */
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 10px 25px rgba(161, 196, 253, 0.4) !important;
+}
+
+/* ========================================= */
+/* 2. ปุ่มโซเชียลข้างใน Modal (Facebook, IG, X, Line) */
+/* ========================================= */
+/* หัวข้อ */
+.rollzy-modal-title {
+  font-family: 'Space Grotesk', 'Mitr', sans-serif !important;
+  font-size: 1.9rem !important;
+  font-weight: 900 !important;
+  margin-bottom: 25px !important;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  
+  /* 🌟 ปรับสีใหม่ให้เข้มขึ้น: ชมพูเข้ม (#D83A7E) ไล่ไปชมพูพีช (#ff9a9e) */
+  background: linear-gradient(135deg, #eaa7b2 0%, #bd9add 50%, #6d9eed 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  
+  /* เพิ่มเงาเล็กน้อยเพื่อให้ตัวหนังสือดูเด้งออกมา 
+  filter: drop-shadow(0 2px 3px rgba(216, 58, 126, 0.15)) !important; */
+} 
+
+@media (max-width: 767px) {
+  .rollzy-modal-title {
+    font-size: 1.6rem !important;
+     margin-bottom: 25px !important;
+  }
+  .rollzy-modal-close {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* อะไรไม่รู้ */
+
+.rollzy-channel {
+  border: none !important; /* ไม่มีกรอบตลอดเวลา */
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* บังคับตัวหนังสือและลูกศรให้เป็นสีขาวตลอดเวลา */
+.rollzy-channel-name,
+.rollzy-channel-arrow {
+  color: #ffffff !important; 
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+/* บังคับโลโก้ให้เป็นสีขาวตลอดเวลา */
+.rollzy-channel-logo-fb,
+.rollzy-channel-logo-ig,
+.rollzy-channel-logo-x,
+.rollzy-channel-logo-opc {
+  filter: brightness(0) invert(1) !important; 
+}
+
+/* เอฟเฟกต์ตอนชี้: เด้งขึ้นนิดนึง และลูกศรขยับไปทางขวา */
+.rollzy-channel:hover {
+  transform: translateY(-3px) scale(1.01) !important; 
+}
+
+.rollzy-channel:hover .rollzy-channel-arrow {
+  transform: translateX(4px) !important;
+  color: #ffffff !important;
+}
+
+/* ========================================= */
+/* โทนสีแต่ละแอป (ปกติ = สีซอฟต์ / ตอนชี้ = สีเข้มไล่เฉดลูกเล่นสวยๆ) */
+/* ========================================= */
+
+/* Facebook */
+.rollzy-channel--fb {
+  background: linear-gradient(90deg, #6aa5e3 0%, #6892e8 100%) !important;
+}
+.rollzy-channel--fb:hover {
+  background: linear-gradient(90deg, #1877f2 0%, #0d47a1 100%) !important; /* น้ำเงินเข้ม Facebook */
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4) !important; 
+}
+
+/* Instagram */
+.rollzy-channel--ig {
+  background: linear-gradient(90deg, #ff8a7a 0%, #f473a2 100%) !important;
+}
+.rollzy-channel--ig:hover {
+  background: linear-gradient(90deg, #833ab4 0%, #dd2a7b 50%, #f58529 100%) !important; /* สีรุ้ง IG เข้มๆ */
+  box-shadow: 0 8px 20px rgba(221, 42, 123, 0.4) !important; 
+}
+
+/* X (Twitter) */
+.rollzy-channel--x {
+  background: linear-gradient(90deg, #888888 0%, #666666 100%) !important;
+}
+.rollzy-channel--x:hover {
+  background: linear-gradient(90deg, #333333 0%, #000000 100%) !important; /* ดำสนิท */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important; 
+}
+
+/* Line OpenChat */
+.rollzy-channel--line {
+  background: linear-gradient(90deg, #51df85 0%, #29c762 100%) !important;
+}
+.rollzy-channel--line:hover {
+  background: linear-gradient(90deg, #06c755 0%, #028a39 100%) !important; /* เขียวเข้ม Line */
+  box-shadow: 0 8px 20px rgba(6, 199, 85, 0.4) !important; 
+}
+
+/* ปุ่มปิด*/
+.rollzy-modal-close {
+  margin-top: 15px !important;
+  padding: 10px 35px !important; /* ขยายให้ยาวขึ้นดูสวยกว่าปุ่มกลมๆ สั้นๆ */
+  border-radius: 999px !important;
+  border: 1px solid rgba(216, 58, 126, 0.2) !important;
+  
+  /* พื้นหลังสีชมพูอ่อนจางๆ แบบกระจก */
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  color: #D83A7E !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* เอฟเฟกต์ตอนชี้: เปลี่ยนเป็นสีชมพูทึบและตัวหนังสือขาว */
+.rollzy-modal-close:hover {
+  background: #D83A7E !important;
+  color: #ffffff !important;
+  border-color: #D83A7E !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 15px rgba(216, 58, 126, 0.2) !important;
+}
+/* ========================================= */
+/* HEADER แบบไล่สี (Gradient Text) - Mail Supporters */
+/* ========================================= */
+
+.gradient-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.gradient-section-header h2 {
+  font-family: 'Space Grotesk', 'Mitr', sans-serif !important;
+  font-size: 3.2rem !important; /* ปรับขนาดลงนิดนึงเพราะชื่อยาวขึ้น */
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  
+  /* 🌟 เปลี่ยนสีไล่เฉดจาก ชมพูเข้ม ไป ชมพูพาสเทล ให้เข้ากับธีมเว็บ */
+  background: linear-gradient(90deg, #D83A7E 0%, #ffb6c1 100%) !important; 
+  
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block;
+}
+
+.gradient-section-header p {
+  color: #a07c89 !important;
+  font-size: 0.95rem !important;
+  margin: 10px 0 0 !important;
+  font-weight: 500 !important;
+}
+
+/* ========================================= */
+/* ปรับตัวหนังสือด้านซ้ายให้ดูมีมิติ ไม่โล่งเกินไป */
+/* ========================================= */
+
+.rollzy-lead {
+  font-family: 'Mitr', sans-serif !important;
+  font-size: 1.4rem !important;
+  color: #cc8b8f !important; /* เปลี่ยนสีให้ล้อกับหัวข้อ */
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.rollzy-subtitle {
+  font-size: 1rem !important;
+  color: #888 !important;
+  margin-bottom: 30px !important; /* ถีบปุ่มให้ลงไปอีกนิด จะได้ไม่ดูเบียด */
+  line-height: 1.6 !important;
+  
+}/* ========================================= */
+/* เลย์เอาต์ Supporters ชิดขอบ 100% และลดความสูงลง */
+/* ========================================= */
+/* 1. ลบขอบเว้นระยะของ Section ตัวแม่ (นี่คือตัวการที่ทำให้ไม่ชิดขอบ) */
+#rollzy.page-section {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 2. ขยาย Container ด้านในให้เต็มจอ (ลบกรอบซ้ายขวา) */
+#rollzy .page-section-inner {
+  max-width: 100% !important;
+  padding: 0 !important;
+  
+}
+
+/* 3. โครงสร้างหลัก (บังคับเต็มพื้นที่) */
+.rollzy-split-layout {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: #fff9fc; /* โทนสีพื้นให้เนียน */
+  overflow: hidden;
+}
+
+/* 4. ฝั่งข้อความ (ซ้าย) - จัดให้อยู่ในแนวเดียวกับเนื้อหาเว็บปกติ */
+.rollzy-content-left {
+  flex: 1;
+  max-width: 700px;
+  /* 🌟 ทริค: ใช้สูตรคำนวณให้ข้อความตรงกับขอบซ้ายของเนื้อหาส่วนอื่นพอดีเป๊ะ */
+  padding: 40px 20px 40px max(28px, calc((100vw - 1120px) / 2 + 28px));
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gradient-section-header.left-align {
+  text-align: left;
+  margin-bottom: 20px !important; /* บีบหัวข้อกับข้อความให้ชิดกัน */
+}
+
+.rollzy-subtitle--left {
+  text-align: left;
+  margin-top: 0 !important;
+  margin-bottom: 25px !important;
+  font-size: 1.05rem !important;
+  color: #888 !important;
+}
+
+.rollzy-actions--left {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+/* 5. ฝั่งรูปภาพ (ขวา) - บังคับให้ชิดขอบ บน-ขวา-ล่าง 100% */
+.rollzy-image-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 65%; /* ขนาดรูป */
+  z-index: 1;
+}
+
+.rollzy-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block; /* ลบช่องว่างล่างแปลกๆ ของรูป */
+}
+
+/* 6. หน้ากากไล่สีเฟดภาพ (บังคับให้หายสนิทก่อนถึงตัวหนังสือ) */
+.rollzy-image-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right, 
+    #fff9fc 0%, 
+    #fff9fc 20%, /* 🌟 ช่วงนี้จะทึบสนิทกลืนกับพื้นหลัง ป้องกันรูปไปทับตัวหนังสือ */
+    rgba(255, 249, 252, 0.85) 35%, 
+    rgba(255, 249, 252, 0.3) 60%, 
+    transparent 95%
+  ) !important;
+}
+
+/* ========================================= */
+/* ปรับแต่งสำหรับมือถือ */
+/* ========================================= */
+@media (max-width: 767px) {
+  .rollzy-split-layout {
+    flex-direction: column;
+  }
+  .rollzy-content-left {
+    padding: 30px 20px 20px !important;
+    text-align: center;
+  }
+  .gradient-section-header.left-align,
+  .rollzy-subtitle--left {
+    text-align: center;
+  }
+  .rollzy-actions--left {
+    justify-content: center;
+  }
+  
+  .rollzy-image-right {
+    position: relative;
+    width: 100%;
+    height: 280px;
+  }
+  .rollzy-image-gradient-overlay {
+    background: linear-gradient(
+      to bottom, 
+      #fff9fc 0%, 
+      #fff9fc 20%, 
+      rgba(255, 249, 252, 0.85) 40%, 
+      rgba(255, 249, 252, 0.3) 70%, 
+      transparent 95%
+    ) !important;
+  }
+  /* ========================================= */
+/* ปรับขนาดตัวอักษรให้เล็กลงในมือถือ */
+/* ========================================= */
+
+  
+  /* ย่อขนาดหัวข้อใหญ่ (Mail BNK48 Supporters) */
+  .gradient-section-header.left-align h2 {
+    font-size: 1.8rem !important; /* 🌟 ลดจาก 2.2rem - 2.4rem ให้เล็กลงพอดีตา */
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ย่อขนาดคำโปรย (มาร่วมเป็นส่วนหนึ่งในการ Support...) */
+  .rollzy-subtitle--left {
+    font-size: 0.85rem !important; /* 🌟 ลดจาก 1.05rem ให้ดูคลีนขึ้น */
+    margin-bottom: 20px !important;
+    line-height: 1.5 !important;
+    padding: 0 10px; /* เพิ่มพื้นที่ว่างด้านข้างนิดหน่อยไม่ให้ชนขอบ */
+  }
+
+  /* ปรับขนาดตัวหนังสือในปุ่มให้เล็กลงตาม */
+  .rollzy-btn {
+    font-size: 0.85rem !important;
+    padding: 8px 18px !important;
+  }
+  
+  /* ระยะห่างของรูปภาพ */
+  .rollzy-image-right {
+    height: 250px; /* ลดความสูงรูปลงอีกนิดให้สมดุลกับตัวอักษรที่เล็กลง */
+  }
+}
+
 
 /*Footer-top*/
 
@@ -4029,4 +4568,52 @@ text-align: left;     /* เหมือนตอนข้อความ */
   }
   
 }
+}
+
+/* ========================================= */
+/* ปรับลดขนาดหัวข้อทุกส่วนสำหรับมือถือ (Mobile Header Scaling) */
+/* ========================================= */
+
+@media (max-width: 767px) {
+  
+  /* 1. หัวข้อใหญ่หน้าแรก (Hero Name) */
+  .hero-name-main {
+    font-size: 2.2rem !important; /* ลดจาก 2.8rem เพื่อไม่ให้บังหน้า */
+  }
+  .hero-name-sub {
+    font-size: 1.1rem !important;
+  }
+
+  /* 2. หัวข้อประจำ Section (About, Schedule, Gallery, Social, Discography) */
+  .pink-about-header h2, 
+  #schedule .section-header h2, 
+  .pink-section-header h2, 
+  .gradient-section-header h2,
+  .gradient-section-header.left-align h2,
+  #gallery .section-header h2 {
+    font-size: 2.3rem !important; /* ปรับสเกลลงจาก 2.5rem - 3rem ให้ดูละมุนขึ้น */
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 3. หัวข้อในหน้าหน้ารวมรูป (All Gallery Page) */
+  .gallery-page-header h2 {
+    font-size: 2.0rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* 4. หัวข้อย่อยภายในการ์ด (เช่น ใน Discography หรือ Highlight) */
+  .disco-title-lg, 
+  .disco-mini-title, 
+  .hl-final-title,
+  .rollzy-modal-title {
+    font-size: 1.1rem !important; /* ปรับให้เป็นขนาดหัวข้อรองที่อ่านง่าย */
+    line-height: 1.3 !important;
+  }
+
+  /* 5. เส้นขีดใต้หัวข้อ (Pink Line) */
+  .pink-line {
+    width: 30px !important; /* ย่อเส้นลงตามขนาดหัวข้อ */
+    margin-top: 8px !important;
+  }
 }

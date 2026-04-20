@@ -146,7 +146,6 @@ const GALLERY_ITEMS = [
 function AllGalleryPage() {
   const [activeTab, setActiveTab] = useState("all");
 
-  // เลื่อนขึ้นบนสุดเหมือนเดิม
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -178,15 +177,26 @@ function AllGalleryPage() {
       : GALLERY_ITEMS.filter((item) => item.category === activeTab);
 
   return (
-    <div className="app-root">
+    <div className="app-root gallery-page-root">
       <Navbar />
 
-      <main className="page-section page-section--tone2 gallery-page">
-        {/* ใส่ section-reveal ตรง block ที่อยากให้มีเอฟเฟกต์ */}
+      <main className="page-section gallery-page-bg">
         <div className="page-section-inner section-reveal">
-          <header className="gallery-page-header">
-            <h2>Gallery</h2>
-            <p>รวมภาพของทั้งบน Stage, Event, Meme, Fanart และอื่นๆ</p>
+          
+          {/* 🌟 เพิ่มปุ่ม Back to Home สไตล์เดียวกับ View More */}
+          <div className="gallery-back-wrapper">
+            <a href="/" className="pink-back-btn">
+              ← Back to Home
+            </a>
+          </div>
+
+          {/* 🌟 ปรับ Header เป็นสไตล์ Pink Pastel */}
+          <header className="pink-section-header">
+            <h2>All Gallery</h2>
+            <p style={{ color: "#a07c89", fontSize: "0.95rem", margin: "8px 0 0", textAlign: "center", fontWeight: "500" }}>
+              ❀ รวมภาพความประทับใจทั้งหมด ❀
+            </p>
+            <div className="pink-line"></div>
           </header>
 
           {/* Tabs */}
