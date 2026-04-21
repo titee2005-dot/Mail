@@ -1057,6 +1057,7 @@ body {
     margin: 0 !important;
   }
 }
+
 /* ===== แนวนอนแบบลากข้าง (มือถือเป็นหลัก) ===== */
 
 .card-row {
@@ -2712,8 +2713,7 @@ body {
 
 /*ปรับขนาด All Schedule กับ All Gallery*/
 @media (max-width: 720px) {
-  .gallery-page .page-section-inner,
-  .all-schedule-page .page-section-inner {
+  .gallery-page .page-section-inner {
     padding-left: 24px!important;
     padding-right: 24px!important;   /* เดิม .page-section-inner ใช้ 14px */
   }
@@ -4742,5 +4742,78 @@ text-align: left;     /* เหมือนตอนข้อความ */
     font-size: 0.8rem !important;
     margin: 0 !important;
     line-height: 1.4 !important;
+  }
+}
+/* ========================================= */
+/* ปรับขนาดหัวข้อ All Schedule ในมือถือ (แก้บั๊กขนาดไม่เปลี่ยน) */
+/* ========================================= */
+
+@media (max-width: 767px) {
+  
+  /* 🌟 เพิ่ม #schedule เข้าไปเพื่อให้โค้ดนี้มีพลังสูงสุด */
+  .all-schedule-page #schedule .section-header h2 {
+    font-size: 1.8rem !important; 
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* ปรับเส้นสีชมพู */
+  .all-schedule-page #schedule .section-header .pink-line {
+    width: 30px !important; 
+    margin-top: 6px !important;
+  }
+}
+/* ========================================= */
+/* ปรับขนาดกรอบ Event หน้า All Schedule (มือถือ) ให้ขนาดเท่าโค้ดเก่า */
+/* ========================================= */
+/* ========================================= */
+/* หน้า All Schedule (มือถือ): เลื่อนแนวนอน + สัดส่วนตามโค้ดที่คุณต้องการเป๊ะๆ */
+/* ========================================= */
+@media (max-width: 767px) {
+  
+  /* 1. เรียกใช้ .card-row เพื่อบังคับให้เป็นแถบเลื่อนแนวนอน */
+  .all-schedule-page .card-row {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding: 4px 18px 20px 10px !important; /* เผื่อพื้นที่ให้เงาของการ์ด */
+  }
+
+  /* ซ่อนแถบ Scrollbar ให้ดูสะอาดตา */
+  .all-schedule-page .card-row::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 2. บีบความกว้างการ์ดให้เหลือ 90% (สูงสุด 300px) และความสูงตามโค้ดของคุณ */
+  .all-schedule-page .event-card {
+    width: 90% !important;        
+    max-width: 300px !important;  
+    min-height: 460px !important; 
+    flex: 0 0 auto !important;    /* 🌟 ปลดล็อกให้การ์ดไม่บีบกัน และเลื่อนแนวนอนได้ */
+    margin: 0 !important;
+    scroll-snap-align: center !important; /* เวลาปัด ให้การ์ดหยุดตรงกลางจอพอดี */
+  }
+
+  /* 3. ล็อกความสูงรูปภาพให้เป็น 300px ตามโค้ดที่คุณต้องการเป๊ะๆ */
+  .all-schedule-page .event-thumb {
+    width: 100% !important;
+    height: 300px !important;     
+    aspect-ratio: auto !important; 
+  }
+
+  /* 4. โฟกัสรูปด้านบน ไม่ให้โดนตัด */
+  .all-schedule-page .event-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important; 
+  }
+
+  /* 5. กลับไปใช้ Padding ดั้งเดิม */
+  .all-schedule-page .event-body {
+    padding: 14px 14px 18px !important; 
   }
 }

@@ -1,7 +1,7 @@
+// src/Eventslist.jsx
 import { events } from "./events";
 
 function EventsSection() {
-  // กรองงานที่ยังไม่หมดเวลา
   let activeEvents = events.filter(e => e.lastShowDate > new Date());
   if(activeEvents == null || activeEvents.length == 0) {
     activeEvents = [{
@@ -16,21 +16,14 @@ function EventsSection() {
       <div className="page-section-inner">
 
         <div className="events-header">
-          {/* ส่วนหัวที่ปรับโครงสร้างให้เหมือน About 100% */}
           <div className="section-header">
             <h2>All Schedule</h2>
             <div className="pink-line"></div>
           </div>
-
-          {/* ปุ่ม All Schedule */}
-          <a 
-            href="/" 
-            className="all-schedule-btn"
-          >
-            Back
-          </a>
+          <a href="/" className="all-schedule-btn">Back</a>
         </div>
 
+        {/* 🌟 เปลี่ยนกลับเป็น "card-row" เพื่อให้ปัดซ้ายขวาได้ 🌟 */}
         <div className="card-row">
           {activeEvents.map((ev, index) => (
             <a 
