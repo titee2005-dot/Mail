@@ -257,7 +257,7 @@ function Navbar() {
         <nav className="nav">
           <div className="nav-main">
             <div className="nav-logo">
-             <img src="/" alt="Rose's Garden Logo" className="nav-logo-img" />
+             <img src="/logo.png" alt="Rose's Garden Logo" className="nav-logo-img" />
               <span>Mail&apos;S</span>
             </div>
 
