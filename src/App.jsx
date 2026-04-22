@@ -413,15 +413,15 @@ function GallerySection() {
   const [selectedItem, setSelectedItem] = useState(null);
   
   const items = [
-    { id: 1, src: "/Mail-cover5.JPG", label: "Hachicha", credit: "Rollzy_Bunny"}, 
-    { id: 2, src: "/jx1.JPG", label: "JapanExpo", credit: "Rollzy_Bunny" },
-    { id: 3, src: "/bdpic1.JPG", label: "Halloween", credit: "Rollzy_Bunny" },
-    { id: 4, src: "/hwpic2.JPG", label: "Halloween", credit: "Rollzy_Bunny" },
-    { id: 5, src: "/memepic2.JPG", label: "Meme", credit: "Rollzy_Bunny" },
-    { id: 6, src: "/hachicha1.JPG", label: "Hachicha", credit: "Rollzy_Bunny" },
-    { id: 7, src: "/hwpic5.JPG", label: "Halloween", credit: "BNK_Story" }, 
+    { id: 1, src: "/Mail-cover5.JPG", label: "PresssTour", credit: "Phoenixcz"}, 
+    { id: 2, src: "/Jx1.JPG", label: "JapanExpo", credit: "BNK_Story" },
+    { id: 3, src: "/Jx2.JPG", label: "JapanExpo", credit: "BNK_Story" },
+    { id: 4, src: "/SMG1.JPG", label: "Shock Me Girls", credit: "" },
+    { id: 5, src: "/SMG2.JPG", label: "Shock Me Girls", credit: "" },
+    { id: 6, src: "/SMG3.JPG", label: "Shock Me Girls", credit: "" },
+    { id: 7, src: "/hwpic5.JPG", label: "To be Update", credit: "" }, 
     // เพิ่มรูปที่ 8 เข้าไปเพื่อให้ตารางเต็ม 2 แถว แถวละ 4 พอดี
-    { id: 8, src: "/hwpic1.JPG", label: "Event", credit: "Rollzy_Bunny" } 
+    { id: 8, src: "/hwpic1.JPG", label: "To be Update", credit: "" } 
   ];
 
   return (
