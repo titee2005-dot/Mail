@@ -2726,7 +2726,7 @@ body {
 /*ปรับตำแหน่งรูป*/
 /* ใบใหญ่ใบแรกซ้ายบน */
 .gallery-home-grid .gallery-home-cell:nth-child(1) img {
-  object-position: center 25%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
+  object-position: 20% 25%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
   /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
 }
 .gallery-home-grid .gallery-home-cell:nth-child(2) img {
@@ -2738,15 +2738,23 @@ body {
   /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
 }
 .gallery-home-grid .gallery-home-cell:nth-child(4) img {
-  object-position: center 25%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
+  object-position: center 40%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
   /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
 }
 .gallery-home-grid .gallery-home-cell:nth-child(5) img {
-  object-position: center 8%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
+  object-position: center 28%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
   /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
 }
 .gallery-home-grid .gallery-home-cell:nth-child(6) img {
   object-position: center 10%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
+  /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
+}
+.gallery-home-grid .gallery-home-cell:nth-child(7) img {
+  object-position: center 10%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
+  /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
+}
+.gallery-home-grid .gallery-home-cell:nth-child(8) img {
+  object-position: center 5%;  /* ซ้าย–ขวา 30%, บน–ล่าง 20% */
   /* ลองปรับเป็น 50% 10%, 40% 0% ตามที่ชอบได้เลย */
 }
 
