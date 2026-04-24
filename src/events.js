@@ -64,7 +64,7 @@
       place: "📍Union Mall, Bangkok",
       image: "/rs1.jpg",
       link: "https://www.facebook.com/share/p/1LCdXHR5Yv/",
-      lastShowDate: new Date(2026, 4, 16, 23, 59, 59),
+      lastShowDate: new Date(2026, 4, 4, 23, 59, 59),
     },
      {
       title: "Shock Me Girls: LOCKER BOX",
