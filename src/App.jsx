@@ -417,8 +417,8 @@ function GallerySection() {
     { id: 2, src: "/Jx1.JPG", label: "JapanExpo", credit: "BNK_Story" },
     { id: 3, src: "/mail6.jpg", label: "Songkran", credit: "Melody's" },
     { id: 4, src: "/SMG1.JPG", label: "Shock Me Girls", credit: "BNK_Story" },
-    { id: 5, src: "/mail2.jpg", label: "Stage", credit: "หนีงานไปถ่าย BNK48" },
-    { id: 6, src: "/mail7.jpg", label: "Stage", credit: "Phoenixcz Room" },
+    { id: 5, src: "/mail2.jpg", label: "Songkran", credit: "หนีงานไปถ่าย BNK48" },
+    { id: 6, src: "/mail7.jpg", label: "Melody of Life", credit: "Phoenixcz Room" },
     { id: 7, src: "/mail5.jpg", label: "Roadshow", credit: "Mr.Aunn" }, 
     // เพิ่มรูปที่ 8 เข้าไปเพื่อให้ตารางเต็ม 2 แถว แถวละ 4 พอดี
     { id: 8, src: "/mail4.jpg", label: "Stage", credit: "aunnnwh" } 
