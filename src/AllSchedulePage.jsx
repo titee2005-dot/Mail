@@ -39,7 +39,7 @@ function AllSchedulePage() {
       </main>
       {/* Footer แบบเดียวกับหน้า Home */}
      <footer className="footer">
-  <p className="footer-line1">-`♡´- Fansite Project made by RollzyBunny</p>
+  <p className="footer-line1">-`♡´- Fansite Project made by BNK_Story</p>
   <p className="footer-line2">Original Content & Artist © by Independent Artist Management (iAM).</p>
 </footer>
     </div>
